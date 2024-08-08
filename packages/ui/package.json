@@ -21,7 +21,11 @@
   ],
   "scripts": {
     "dev": "vite build --watch",
-    "build": "vite build"
+    "build": "vite build",
+    "prepare": "rush build"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "dependencies": {
     "solid-js": "1.8.16",
