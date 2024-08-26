@@ -233,6 +233,7 @@ hakinaElement("el-button", defaultProps, styleText, (props: Props & CompositionP
         }}
         style={props.innerStyle ?? {}}
       >
+        BUTTON
         <slot/>
       </div>
     </Dynamic>

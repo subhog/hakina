@@ -1,6 +1,6 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/rush/v5/rush.schema.json",
-  "rushVersion": "5.112.2",
+  "rushVersion": "5.133.0",
   "pnpmVersion": "8.14.0",
   "nodeSupportedVersionRange": ">=18.15.0 <22.0.0",
   "gitPolicy": {
@@ -10,19 +10,18 @@
     "defaultBranch": "master",
     "defaultRemote": "origin"
   },
-  "eventHooks": {
-    "preRushInstall": [],
-    "postRushInstall": [],
-    "preRushBuild": [],
-    "postRushBuild": [],
-    "preRushx": [],
-    "postRushx": []
-  },
+  "eventHooks": {},
   "projects": [
     {
       "packageName": "@hakina/ui",
       "projectFolder": "packages/ui",
       "tags": ["package"],
+      "shouldPublish": true
+    },
+    {
+      "packageName": "@hakina/theme-horizon",
+      "projectFolder": "packages/theme-horizon",
+      "tags": ["package", "theme"],
       "shouldPublish": true
     },
     {

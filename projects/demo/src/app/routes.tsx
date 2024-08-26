@@ -3,16 +3,18 @@
 
 import Layout from "$/blocks/main/Layout"
 import HomePage from "$/blocks/main/HomePage"
-import BodyPage from "$/blocks/sink/body/BodyPage"
-import LayoutPage from "$/blocks/sink/composition/LayoutPage"
-import CompositionPage from "$/blocks/sink/composition/CompositionPage"
-import StaticPage from "$/blocks/sink/static/StaticPage"
-import ActionPage from "$/blocks/sink/action/ActionPage"
-import ControlPage from "$/blocks/sink/control/ControlPage"
-import DisplayPage from "$/blocks/sink/display/DisplayPage"
-import PartPage from "$/blocks/sink/part/PartPage"
-import ThemePage from "$/blocks/sink/theme/ThemePage"
-import SandboxPage from "$/blocks/sandbox/SandboxPage"
+import SinkPage from "$/blocks/sink/SinkPage"
+import BodyPage from "$/blocks/docs/body/BodyPage"
+import LayoutPage from "$/blocks/docs/composition/LayoutPage"
+import CompositionPage from "$/blocks/docs/composition/CompositionPage"
+import StaticPage from "$/blocks/docs/static/StaticPage"
+import ActionPage from "$/blocks/docs/action/ActionPage"
+import ControlPage from "$/blocks/docs/control/ControlPage"
+import DisplayPage from "$/blocks/docs/display/DisplayPage"
+import PartPage from "$/blocks/docs/part/PartPage"
+import ThemePage from "$/blocks/docs/theme/ThemePage"
+import SandboxLayout from "$/blocks/sandbox/SandboxLayout"
+import sandboxRoutes from "$/blocks/sandbox/sandboxRoutes"
 import NotFound from "$/blocks/main/NotFound"
 
 
@@ -23,6 +25,8 @@ export const routes = [{
   
     {
       path: "/", component: HomePage,
+    }, {
+      path: "/sink", component: SinkPage,
     }, {
       path: "/body", component: BodyPage,
     }, {
@@ -42,7 +46,7 @@ export const routes = [{
     }, {
       path: "/theme", component: ThemePage,
     }, {
-      path: "/sandbox", component: SandboxPage,
+      path: "/sandbox", component: SandboxLayout, children: sandboxRoutes,
     }, {
       path: "*", component: NotFound,
     }

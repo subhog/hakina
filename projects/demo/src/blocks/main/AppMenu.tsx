@@ -21,21 +21,25 @@ export const AppMenu = (props: Props) => {
     <Menu
       style={{"height": "100%"}}
     >
-      <el-h-stack>
-      <img
-        src="/prism.png"
-        style={{
-          width: "50%"
-        }}
-      />
-      </el-h-stack>
-      <Card>
-        Prism
-        <div>
-          A good looking Solid.
-        </div>
-      </Card>
-
+      <el-v-stack
+        padding={PaddingSize.MEDIUM}
+        gap={PaddingSize.MEDIUM}
+      >
+        <img
+          src="/hakinaAlphaDark.png"
+          style={{
+            width: "50%"
+          }}
+        />
+        <div>HAKINA</div>
+        <div>web components</div>
+      </el-v-stack>
+      
+      <MenuGroup>
+        <MenuItem href="/">Home</MenuItem>
+        <MenuItem href="/sink">Kitchen Sink</MenuItem>
+        <MenuItem href="/sandbox">• Sandbox •</MenuItem>
+      </MenuGroup>
       <MenuGroup
         title="Usage"
         href="/body"
@@ -123,8 +127,20 @@ export const AppMenu = (props: Props) => {
         <MenuItem href="/theme#fonts">Fonts</MenuItem>
       </MenuGroup>
 
-      <el-stack-separator/>
-      <el-padded-stack padding={PaddingSize.LARGEST}/>
+      <el-stack-separator padding={PaddingSize.LARGEST}/>
+      <el-h-stack>
+        <img
+          src="/hakinaAlphaDark.png"
+          style={{
+            width: "25%",
+            filter: "grayscale(100%)",
+            "mix-blend-mode": "soft-light",
+            // "mix-blend-mode": "luminosity",
+            // opacity: "50%",
+          }}
+        />  
+      </el-h-stack>
+      <el-h-stack padding={PaddingSize.LARGEST}>&nbsp;</el-h-stack>
     </Menu>
   );
 }
