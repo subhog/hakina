@@ -5,7 +5,7 @@ import {
   compositionStyleText,
   PaddingSize,
 } from "./Composition";
-import { hakinaElement, useParentStyle } from "$/utils/hakinaElement";
+import { hakinaElement, HakinaWebComponent } from "$/utils/hakinaElement";
 
 export type Props = {
   flip?: boolean,
@@ -17,139 +17,142 @@ const defaultProps: Required<Props> = {
   children: null,
 }
 
-const styleText = `
-  .hstack {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-  }
+// const styleText = `
+//   .hstack {
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: center;
+//     align-items: stretch;
+//   }
 
-  .vstack {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
+//   .vstack {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: stretch;
+//   }
 
-  .zstack {
-    position: relative;
-    width: 100%;
-    height: 100%;
-  }
+//   .zstack {
+//     position: relative;
+//     width: 100%;
+//     height: 100%;
+//   }
 
-  .zitem {
-    position: absolute;
-    left: 0px;
-    right: 0px;
-    top: 0px;
-    bottom: 0px;
-  }
-`;
+//   .zitem {
+//     position: absolute;
+//     left: 0px;
+//     right: 0px;
+//     top: 0px;
+//     bottom: 0px;
+//   }
+// `;
 
 
-hakinaElement("el-v-stack", defaultProps, styleText, (props: Props & CompositionProps) => {
-  useParentStyle(props, () => ({
-    width: props.wide ? "100%" : undefined,
-    height: props.tall ? "100%" : undefined,
-  }));
+// const hStyleText = `
+//   :host {
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: center;
+//     align-items: stretch;
+//   }
+// `
 
+hakinaElement("el-v-stack", defaultProps, (props: Props & CompositionProps) => {
   return (
-    <div
-      classList={{
-        ...compositionClassList(props),
-        vstack: !props.flip,
-        hstack: !!props.flip,
-      }}
-      style={props.styles}
+    <HakinaWebComponent
+      style={`
+        :host {
+          display: flex;
+          flex-direction: ${props.flip ? "row" : "column"};
+          justify-content: center;
+          align-items: stretch;
+        }
+      `}
     >
       <slot/>
-    </div>
-  );
+    </HakinaWebComponent>
+  )
 });
 
-hakinaElement("el-h-stack", defaultProps, styleText, (props: Props & CompositionProps) => {
-  useParentStyle(props, () => ({
-    width: props.wide ? "100%" : undefined,
-    height: props.tall ? "100%" : undefined,
-  }));
-
+hakinaElement("el-h-stack", defaultProps, (props: Props & CompositionProps) => {
   return (
-    <div
-      classList={{
-        ...compositionClassList(props),
-        hstack: !props.flip,
-        vstack: !!props.flip,
-      }}
-      style={props.styles}
+    <HakinaWebComponent
+      style={`
+        :host {
+          display: flex;
+          flex-direction: ${props.flip ? "column" : "row"};
+          justify-content: center;
+          align-items: stretch;
+        }
+      `}
     >
       <slot/>
-    </div>
-  );
+    </HakinaWebComponent>
+  )
 });
 
 
-hakinaElement(
-  'el-padded-stack',
-  {...defaultProps, padding: PaddingSize.MEDIUM},
-  styleText,
-  (props: Props & CompositionProps) => {
-    useParentStyle(props, () => ({
-      width: props.wide ? "100%" : undefined,
-      height: props.tall ? "100%" : undefined,
-    }));
+// hakinaElement(
+//   'el-padded-stack',
+//   {...defaultProps, padding: PaddingSize.MEDIUM},
+//   styleText,
+//   (props: Props & CompositionProps) => {
+//     // useParentStyle(props, () => ({
+//     //   width: props.wide ? "100%" : undefined,
+//     //   height: props.tall ? "100%" : undefined,
+//     // }));
 
-    return (
-      <div
-        classList={{
-          ...compositionClassList(props),
-          hstack: !props.flip,
-          vstack: !!props.flip,
-        }}
-        style={props.styles}
-      >
-        <slot/>
-      </div>
-    );
-  }
-);
+//     return (
+//       <div
+//         classList={{
+//           ...compositionClassList(props),
+//           hstack: !props.flip,
+//           vstack: !!props.flip,
+//         }}
+//         style={props.styles}
+//       >
+//         <slot/>
+//       </div>
+//     );
+//   }
+// );
 
-hakinaElement("el-z-stack", defaultProps, styleText, (props: Props & CompositionProps) => {
-  useParentStyle(props, () => ({
-    width: props.wide ? "100%" : undefined,
-    height: props.tall ? "100%" : undefined,
-  }));
+// hakinaElement("el-z-stack", defaultProps, styleText, (props: Props & CompositionProps) => {
+//   // useParentStyle(props, () => ({
+//   //   width: props.wide ? "100%" : undefined,
+//   //   height: props.tall ? "100%" : undefined,
+//   // }));
 
-  return (
-    <div
-      classList={{
-        ...compositionClassList(props),
-        zstack: true,
-      }}
-      style={props.styles}
-    >
-      <slot/>
-    </div>
-  );
-});
+//   return (
+//     <div
+//       classList={{
+//         ...compositionClassList(props),
+//         zstack: true,
+//       }}
+//       style={props.styles}
+//     >
+//       <slot/>
+//     </div>
+//   );
+// });
 
-hakinaElement("el-z-item", defaultProps, styleText, (props: Props & CompositionProps) => {
-  useParentStyle(props, () => ({
-    width: props.wide ? "100%" : undefined,
-    height: props.tall ? "100%" : undefined,
-  }));
+// hakinaElement("el-z-item", defaultProps, styleText, (props: Props & CompositionProps) => {
+//   // useParentStyle(props, () => ({
+//   //   width: props.wide ? "100%" : undefined,
+//   //   height: props.tall ? "100%" : undefined,
+//   // }));
 
-  return (
-    <div
-      classList={{
-        ...compositionClassList(props),
-        zitem: true,
-      }}
-      style={props.styles}
-    >
-      <slot/>
-    </div>
-  );
-});
+//   return (
+//     <div
+//       classList={{
+//         ...compositionClassList(props),
+//         zitem: true,
+//       }}
+//       style={props.styles}
+//     >
+//       <slot/>
+//     </div>
+//   );
+// });
 
 

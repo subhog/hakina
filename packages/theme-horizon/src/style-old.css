@@ -1,4 +1,4 @@
-body {
+:root {
 
   --dusk-color-black: #080808;
   --dusk-color-mist: #012;
@@ -17,6 +17,17 @@ body {
   --dusk-font-mono: "Fira Mono", monospace;
 
   
+
+
+  /* ===== COMPOSITION ========================= */
+
+  --hakina-padding-smallest: 2px;
+  --hakina-padding-smaller: 4px;
+  --hakina-padding-small: 8px;
+  --hakina-padding-medium: 12px;
+  --hakina-padding-large: 16px;
+  --hakina-padding-larger: 24px;
+  --hakina-padding-largest: 48px;
 
 
   /* ===== UTILS ========================= */
@@ -39,7 +50,7 @@ body {
 
   /* ===== BODY ========================= */
 
-  --hakina-body-background: var(--dusk-color-black);
+  --hakina-body-background: var(--dusk-color-mist);
   --hakina-body-color: var(--dusk-color-offwhite);
 
   --hakina-font-header: var(--dusk-font-header);

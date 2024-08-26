@@ -22,7 +22,7 @@ import { createSignal, onCleanup, onMount } from "solid-js";
 
 
 
-export const SandboxPage = () => {
+export const MessPage = () => {
   const [clock, setClock] = createSignal(0);
   let interval: number | null = null;
 
@@ -181,4 +181,4 @@ export const SandboxPage = () => {
   );
 }
 
-export default SandboxPage;
+export default MessPage;

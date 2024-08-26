@@ -201,11 +201,11 @@ const defaultProps: Required<Props> = {
 // export default Button;
 
 
-hakinaElement("el-button", defaultProps, styleText, (props: Props & CompositionProps) => {
-  useParentStyle(props, () => ({
-    width: props.wide ? "100%" : undefined,
-    height: props.tall ? "100%" : undefined,
-  }));
+hakinaElement("el-button", defaultProps, (props: Props & CompositionProps) => {
+  // useParentStyle(props, () => ({
+  //   width: props.wide ? "100%" : undefined,
+  //   height: props.tall ? "100%" : undefined,
+  // }));
 
   return (
     <Dynamic

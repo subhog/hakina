@@ -1,10 +1,10 @@
-import HomePage from "./HomePage"
-import MessPage from "./MessPage"
-import ColorsPage from "./ColorsPage"
+import HomePage from "./pages/HomePage"
+import MessPage from "./pages/MessPage"
+import ColorsPage from "./pages/ColorsPage"
 import NotFound from "$/blocks/main/NotFound"
 
 
-export const routes = [{
+export default [{
     path: "/", component: HomePage,
   }, {
     path: "/mess", component: MessPage,

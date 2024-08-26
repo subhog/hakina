@@ -1,20 +1,10 @@
-// import { lazy } from "solid-js";
-
+import { lazy } from "solid-js";
 
 import Layout from "$/blocks/main/Layout"
 import HomePage from "$/blocks/main/HomePage"
 import SinkPage from "$/blocks/sink/SinkPage"
-import BodyPage from "$/blocks/docs/body/BodyPage"
-import LayoutPage from "$/blocks/docs/composition/LayoutPage"
-import CompositionPage from "$/blocks/docs/composition/CompositionPage"
-import StaticPage from "$/blocks/docs/static/StaticPage"
-import ActionPage from "$/blocks/docs/action/ActionPage"
-import ControlPage from "$/blocks/docs/control/ControlPage"
-import DisplayPage from "$/blocks/docs/display/DisplayPage"
-import PartPage from "$/blocks/docs/part/PartPage"
-import ThemePage from "$/blocks/docs/theme/ThemePage"
-import SandboxLayout from "$/blocks/sandbox/SandboxLayout"
-import sandboxRoutes from "$/blocks/sandbox/sandboxRoutes"
+import { DocsLayout, docsRoutes } from "$/blocks/docs"
+import { SandboxLayout, sandboxRoutes } from "$/blocks/sandbox"
 import NotFound from "$/blocks/main/NotFound"
 
 
@@ -28,23 +18,7 @@ export const routes = [{
     }, {
       path: "/sink", component: SinkPage,
     }, {
-      path: "/body", component: BodyPage,
-    }, {
-      path: "/layout", component: LayoutPage,
-    }, {
-      path: "/composition", component: CompositionPage,
-    }, {
-      path: "/static", component: StaticPage,
-    }, {
-      path: "/action", component: ActionPage,
-    }, {
-      path: "/control", component: ControlPage,
-    }, {
-      path: "/display", component: DisplayPage,
-    }, {
-      path: "/part", component: PartPage,
-    }, {
-      path: "/theme", component: ThemePage,
+      path: "/docs", component: DocsLayout, children: docsRoutes,
     }, {
       path: "/sandbox", component: SandboxLayout, children: sandboxRoutes,
     }, {

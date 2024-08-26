@@ -1,20 +1,16 @@
 :root {
 
-  --dusk-color-black: #080808;
-  --dusk-color-mist: #012;
-  --dusk-color-indigo: #023;
-  --dusk-color-azure: #157;
-  --dusk-color-cerulean: #168;
-  --dusk-color-ice: #49A;
+  --horizon-color-black: oklch(10% 0.02 240);
+  --horizon-color-gray: oklch(30% 0.02 240);
+  --horizon-color-blue: oklch(65% 0.12 240);
+  --horizon-color-white: oklch(85% 0.01 240);
+  --horizon-color-bright: oklch(95% 0.01 240);
+  --horizon-color-yellow: oklch(85% 0.19 85);
+  --horizon-color-orange: oklch(70% 0.19 55);
 
-  --dusk-color-amber: #b61;
-  --dusk-color-yellow: #ca1;
-  --dusk-color-offwhite: #9CD;
-  --dusk-color-white: #eee;
-
-  --dusk-font-header: "Signika", sans-serif;
-  --dusk-font-body: "Signika", sans-serif;
-  --dusk-font-mono: "Fira Mono", monospace;
+  --horizon-font-header: "Signika", sans-serif;
+  --horizon-font-body: "Signika", sans-serif;
+  --horizon-font-mono: "Fira Mono", monospace;
 
   
 
@@ -50,12 +46,12 @@
 
   /* ===== BODY ========================= */
 
-  --hakina-body-background: var(--dusk-color-mist);
-  --hakina-body-color: var(--dusk-color-offwhite);
+  --hakina-body-background: var(--horizon-color-gray);
+  --hakina-body-color: var(--horizon-color-white);
 
-  --hakina-font-header: var(--dusk-font-header);
-  --hakina-font-body: var(--dusk-font-body);
-  --hakina-font-mono: var(--dusk-font-mono);
+  --hakina-font-header: var(--horizon-font-header);
+  --hakina-font-body: var(--horizon-font-body);
+  --hakina-font-mono: var(--horizon-font-mono);
 
   /* ===== COMPOSITION ========================= */
 
